@@ -40,13 +40,27 @@ where:
 * The  stream  cipher  shall  feature  an  input  port  which  has  to  be  asserted  when  providing  the input message byte **𝑀** (M_valid port): **1’b1**, when input character is valid and stable, **1’b0**, otherwise.
 
 The following waveform is expected at input interface of hash module:
-![Input](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/screens/input.png)
+
+```verilog
+clk      __|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__
+
+M_valid  ______________|‾‾‾‾‾‾‾‾|_____|‾‾‾‾‾‾‾‾‾‾‾‾‾‾|___________
+
+M[7:0]   [‾‾‾‾‾‾X̅‾‾‾‾‾‾|  M[0]  |‾‾X̅‾‾|  M[1] | M[2] |‾‾‾‾‾X̅‾‾‾‾]
+```
 
 * The stream cipher shall feature an output port which is asserted when the generated output *digest* (or hash value) is available at the corresponding output port (hash_ready port): **1’b1**, when output digestis valid and stable, **1’b0**, otherwise. \
 This flag shall be kept to logic 1 until a new message digest computation  is  performed.
 
 The  following  waveform  is  expected  at  the  output  interface  of hash module:
-![Output](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/screens/output.png)
+
+```verilog
+clk      __|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__
+
+ready    ______________|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|___________
+
+M[7:0]   [‾‾‾‾‾‾X̅‾‾‾‾‾‾|             hash            |‾‾‾‾‾X̅‾‾‾‾]
+```
 
 * For the  AES  S-box  function  implement  the  LUT  version. \
 Below it is reported the S-box of AES algorithm, in hexadecimal format: it works on a byte, using the 4 MSb and the 4 LSb of input byte, respectively, as row and column coordinates to substitute it.
@@ -78,4 +92,4 @@ localparam bit [7:0] s_box_lut [0:255] = '{
 
 ## Implementation ##
 
-[Link to more details!](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/light_hash.pdf)
+[Link to more details!](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/light_hash)
