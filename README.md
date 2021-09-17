@@ -40,13 +40,13 @@ where:
 * The  stream  cipher  shall  feature  an  input  port  which  has  to  be  asserted  when  providing  the input message byte **𝑀** (M_valid port): **1’b1**, when input character is valid and stable, **1’b0**, otherwise.
 
 The following waveform is expected at input interface of hash module:
-![Input](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/screen/input.png)
+![Input](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/screens/input.png)
 
 * The stream cipher shall feature an output port which is asserted when the generated output *digest* (or hash value) is available at the corresponding output port (hash_ready port): **1’b1**, when output digestis valid and stable, **1’b0**, otherwise. \
 This flag shall be kept to logic 1 until a new message digest computation  is  performed.
 
 The  following  waveform  is  expected  at  the  output  interface  of hash module:
-![Output](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/screen/output.png)
+![Output](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/screens/output.png)
 
 * For the  AES  S-box  function  implement  the  LUT  version. \
 Below it is reported the S-box of AES algorithm, in hexadecimal format: it works on a byte, using the 4 MSb and the 4 LSb of input byte, respectively, as row and column coordinates to substitute it.
