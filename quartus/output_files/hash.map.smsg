@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at hash.sv(110): always construct contains both blocking and non-blocking assignments File: C:/Users/feffe/Desktop/light_hash/db/hash.sv Line: 110

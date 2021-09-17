@@ -1,0 +1,6 @@
+create_clock -name clk -period 10 [get_ports clk]
+set_false_path -from [get_ports reset_l] -to [get_clocks clk]
+set_input_delay -min 1 -clock [get_clocks clk] [get_ports {m[*] m_valid reset_l}]
+set_input_delay -max 2 -clock [get_clocks clk] [get_ports {m[*] m_valid reset_l}]
+set_output_delay -min 1 -clock [get_clocks clk] [get_ports {hash_ready out[*]}]
+set_output_delay -max 2 -clock [get_clocks clk] [get_ports {hash_ready out[*]}]
