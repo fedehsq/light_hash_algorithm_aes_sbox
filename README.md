@@ -92,4 +92,4 @@ localparam bit [7:0] s_box_lut [0:255] = '{
 
 ## Implementation ##
 
-[Link to more details!](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/light_hash)
+[Link to more details!](https://github.com/fedehsq/light_hash_algorithm_aes_sbox/blob/master/light_hash.pdf)
